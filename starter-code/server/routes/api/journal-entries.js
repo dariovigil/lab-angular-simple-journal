@@ -2,12 +2,13 @@ const express       = require('express');
 const router        = express.Router();
 const Entry         = require('../../models/journal-entry');
 
+/* List all journal entries from #{model} */
 router.get('/journal-entries', (req, res, next) => {
-  Entry.find({}, (err, entries) => {
-    if (err) { return res.json(err).status(500); }
-
-    return res.json(entries);
-  });
+  Entry.find()
+    .then(entries => {
+      res.json(entries);
+    })
+    .catch(e => res.json(e));
 });
 
 router.get('/journal-entries/:id', (req, res, next) => {

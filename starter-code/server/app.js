@@ -32,6 +32,10 @@ app.use(layouts);
 const index = require('./routes/index');
 app.use('/', index);
 
+// const apiFor = require('./routes/api/journal-entries');
+// app.use('/api', apiFor(require('./models/journal-entry')));
+
+
 app.all('/*', function (req, res) {
   res.sendfile(__dirname + '/public/index.html');
 });
