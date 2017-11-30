@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { EntryListComponent } from './entry-list/entry-list.component';
+import { SingleEntryComponent } from './single-entry/single-entry.component';
 
 import {RouterModule} from '@angular/router';
 import {routes} from './routes';
@@ -15,7 +16,8 @@ import {JournalService} from '../services/journal.service';
 @NgModule({
   declarations: [
     AppComponent,
-    EntryListComponent
+    EntryListComponent,
+    SingleEntryComponent
   ],
   imports: [
     BrowserModule,

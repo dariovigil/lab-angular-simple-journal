@@ -15,4 +15,9 @@ export class JournalService {
     return this.http.get(BASEURL)
                     .map(res => res.json());
   }
+
+  getSingleEntry(id):Observable<any> {
+    return this.http.get(`${BASEURL}/${id}`)
+                    .map(res => res.json());
+  }
 }
