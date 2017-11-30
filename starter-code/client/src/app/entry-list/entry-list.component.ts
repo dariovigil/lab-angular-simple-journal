@@ -10,14 +10,15 @@ export class EntryListComponent implements OnInit {
   journalEntries:Array<Object> = [];
   constructor(
     public journalService : JournalService,
-  ) {
+  ) {}
+
+  ngOnInit() {
+    this.getAllList();
+  }
+
+  getAllList() {
     this.journalService.getJournalEntries().subscribe(entries => {
         this.journalEntries = entries;
     })
-   }
-
-  ngOnInit() {
-
   }
-
 }

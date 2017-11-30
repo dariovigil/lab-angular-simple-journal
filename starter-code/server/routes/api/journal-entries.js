@@ -26,7 +26,6 @@ router.post('/journal-entries', (req, res, next) => {
   newEntry.save( (err) => {
     if (err)             { return res.status(500).json(err) }
     if (newEntry.errors) { return res.status(400).json(newEntry) }
-                           console.log(newEntry);
                            return res.json(newEntry);
   });
 });
