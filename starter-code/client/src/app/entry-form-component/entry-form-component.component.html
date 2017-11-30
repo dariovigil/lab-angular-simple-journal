@@ -1,0 +1,11 @@
+<div class="add-entry">
+  <button (click)="addEntry()">Add Entry</button>
+  <div class="entry-form">
+    <label>Title</label><br>
+    <input type="text" [(ngModel)]='newEntry.title'>
+    <br>
+    <label>Content</label><br>
+    <input type="text" [(ngModel)]='newEntry.content'>
+    <br>
+  </div>
+</div>
